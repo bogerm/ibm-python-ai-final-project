@@ -14,6 +14,6 @@ def emotion_detection(text_to_analyse):
         dominant_emotion = max(emotion_scores, key=emotion_scores.get)
         result = emotion_scores.copy()
         result["dominant_emotion"] = dominant_emotion
-    else
+    else:
         result = 'Error'
     return result
