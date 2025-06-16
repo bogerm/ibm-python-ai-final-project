@@ -14,6 +14,16 @@ def emotion_detection(text_to_analyse):
         dominant_emotion = max(emotion_scores, key=emotion_scores.get)
         result = emotion_scores.copy()
         result["dominant_emotion"] = dominant_emotion
+    elif response.status_code == 400:
+        # Explicitly return all values as None
+        result = {
+            "anger": None,
+            "disgust": None,
+            "fear": None,
+            "joy": None,
+            "sadness": None,
+            "dominant_emotion": None
+        }
     else:
-        result = 'Error'
+        result = None  # For other error cases
     return result
